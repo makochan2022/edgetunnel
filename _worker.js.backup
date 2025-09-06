@@ -1,9 +1,9 @@
 
 import { connect } from 'cloudflare:sockets';
 
-let userID = '';
-let proxyIP = '';
-let DNS64Server = '';
+let userID = 'e78639c5-88bf-45bf-81a6-53693830a574';
+let proxyIP = 'dns64.fm2.ztvi.org';
+let DNS64Server = '2602:fc59:b0:64::/96';
 //let sub = '';
 let subConverter = atob('U1VCQVBJLkNNTGl1c3Nzcy5uZXQ=');
 let subConfig = atob('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0FDTDRTU1IvQUNMNFNTUi9tYXN0ZXIvQ2xhc2gvY29uZmlnL0FDTDRTU1JfT25saW5lX01pbmlfTXVsdGlNb2RlLmluaQ==');
@@ -26,7 +26,7 @@ let go2Socks5s = [
 let addresses = [];
 let addressesapi = [];
 let addressesnotls = [];
-let addressesnotlsapi = [];
+let addressesnotlsapi = ['https://raw.githubusercontent.com/makochan2022/cfipcaiji/refs/heads/main/ipv6notls.txt'];
 let addressescsv = [];
 let DLS = 8;
 let remarkIndex = 1;//CSV备注所在列偏移量
@@ -38,8 +38,8 @@ let proxyhostsURL = atob('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2NtbGl1L2
 let RproxyIP = 'false';
 const httpPorts = ["8080", "8880", "2052", "2082", "2086", "2095"];
 let httpsPorts = ["2053", "2083", "2087", "2096", "8443"];
-let 有效时间 = 7;
-let 更新时间 = 3;
+let 有效时间 = 1;
+let 更新时间 = 1;
 let userIDLow;
 let userIDTime = "";
 let proxyIPPool = [];
@@ -4540,31 +4540,6 @@ async function getUsage(accountId, email, apikey, apitoken, all = 100000) {
 
 async function nginx() {
     const text = `
-	<!DOCTYPE html>
-	<html>
-	<head>
-	<title>Welcome to nginx!</title>
-	<style>
-		body {
-			width: 35em;
-			margin: 0 auto;
-			font-family: Tahoma, Verdana, Arial, sans-serif;
-		}
-	</style>
-	</head>
-	<body>
-	<h1>Welcome to nginx!</h1>
-	<p>If you see this page, the nginx web server is successfully installed and
-	working. Further configuration is required.</p>
-	
-	<p>For online documentation and support please refer to
-	<a href="http://nginx.org/">nginx.org</a>.<br/>
-	Commercial support is available at
-	<a href="http://nginx.com/">nginx.com</a>.</p>
-	
-	<p><em>Thank you for using nginx.</em></p>
-	</body>
-	</html>
 	`
     return text;
 }
